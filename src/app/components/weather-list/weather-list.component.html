@@ -1,0 +1,28 @@
+
+
+<div class="container">
+    <div class="card" style="background-color: rgb(46, 149, 180);">
+        <div class="card-body">
+            <h3 style="color: rgb(243, 243, 243);">Historial</h3>
+            <table class="table table-sm table-hover" style="background-color: rgb(53, 242, 248);">
+                <tbody>
+                    <tr *ngFor="let weather of weatherList">
+                        <td>Ciudad: <b>{{weather.cityName}}</b></td>
+                        <td>Código: <b>{{weather.countryCode}}</b></td>
+                        <td>Temp: <b>{{weather.temperature}} ºC</b></td>
+                        <td>Humedad: <b>{{weather.humidity}}%</b></td>
+                        <td>Desc: <b>{{weather.description}}</b></td>
+                        <td>Long: <b>{{weather.longitude}}</b></td>
+                        <td>Lat: <b>{{weather.latitude}}</b></td>
+                        <td>Fecha: <b>{{weather.date}}</b></td>
+                        <td><button (click)="verMapa(weather.latitude, weather.longitude)" class="btn btn-warning">Ver Mapa</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <div id="mapa" class="m-3 p-3" style="border-radius: 20px; border:1px solid rgb(46, 149, 180);">
+
+    </div>
+</div>
